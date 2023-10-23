@@ -1,13 +1,14 @@
 D = int(input())
 N = int(input())
-S = [0 for _ in range(D)]
-for i in range(N):
-  l, r = map(int, input().split())
-  S[l-1] += 1
-  if not r == D:
-    S[r] -= 1
+lr = [map(int, input().split()) for _ in range(N)]
+L, R = [list(i) for i in zip(*lr)]
+A = [0 for _ in range(D+1)]
 
-cnt = 0
-for i in S:
-  cnt += i
-  print(cnt)
+for l, r in zip(L, R):
+  A[l-1] += 1
+  A[r] -= 1
+
+num = 0
+for i in range(D):
+  num += A[i]
+  print(num)

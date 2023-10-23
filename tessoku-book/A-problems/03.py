@@ -1,15 +1,11 @@
 N, K = map(int, input().split())
 P = list(map(int, input().split()))
 Q = list(map(int, input().split()))
-flag = False
-
+flag = "No"
 for p in P:
-    for q in Q:
-        if p + q == K:
-            flag = True
-            break
+  for q in Q:
+    if p + q == K:
+      flag = "Yes"
+      break
 
-if flag:
-    print("Yes")
-else:
-    print("No")
+print(flag)
