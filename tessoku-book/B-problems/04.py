@@ -1,7 +1,7 @@
 N = input()
-i = len(N) - 1
 ans = 0
-for n in N:
-  ans += int(n)*2**i
-  i -= 1
+for i in range(len(N)):
+  if N[i] == "1":
+    ans += 2**(len(N)-1-i)
+
 print(ans)
